@@ -1,0 +1,132 @@
+/* Hero container */
+.hero {
+  position: relative;
+  height: 200px; /* Default height for large screens */
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background-image: url('/gettyimages-455421575-612x612.jpg'); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+
+/* Text styling inside hero */
+.heroText {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #3a5635;
+  padding: 1rem;
+}
+
+/* Hero title styling */
+.hero h2 {
+  font-size: 3rem;
+  color: #88b04b;
+  margin-bottom: 1rem;
+}
+
+/* Hero paragraph styling */
+.hero p {
+  font-size: 1.25rem;
+  color: #2f4b2e;
+  margin: 0.5rem 0;
+}
+
+/* Parrot Containers for animation */
+.parrotContainer1,
+.parrotContainer2,
+.parrotContainer3 {
+  position: absolute;
+  animation: flyAcross 10s linear infinite;
+  width: 100px;
+  height: auto;
+  transform: rotateY(180deg);
+}
+
+.parrotContainer1 {
+  top: 20%;
+  right: -10%;
+  animation-delay: 0s;
+}
+
+.parrotContainer2 {
+  top: 30%;
+  right: -15%;
+  animation-delay: 3s;
+}
+
+.parrotContainer3 {
+  top: 40%;
+  right: -20%;
+  animation-delay: 6s;
+}
+
+/* Smooth and refined parrot animation */
+@keyframes flyAcross {
+  0% {
+    transform: translateX(0) rotate(-10deg) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+  }
+  100% {
+    transform: translateX(-100vw) rotate(10deg) scale(1);
+  }
+}
+
+.parrot {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive styling */
+@media (max-width: 1024px) {
+  .hero {
+    height: 400px; /* Adjusted height for tablets */
+  }
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 350px; /* Adjusted height for small tablets and landscape phones */
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .parrotContainer1,
+  .parrotContainer2,
+  .parrotContainer3 {
+    width: 70px; /* Smaller parrot images on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 300px; /* Further reduced height for mobile screens */
+    padding: 0 0.5rem; /* Smaller padding for mobile */
+  }
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .parrotContainer1,
+  .parrotContainer2,
+  .parrotContainer3 {
+    width: 50px; /* Smallest parrot size for very small screens */
+  }
+}
